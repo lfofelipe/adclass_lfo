@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app>
+<servlet>  
+    <description></description>  
+    <display-name>UsuarioController</display-name>  
+    <servlet-name>UsuarioController</servlet-name>  
+    <servlet-class>br.com.adminclass.controller.UsuarioController</servlet-class>  
+</servlet>  
+<servlet-mapping>  
+    <servlet-name>UsuarioController</servlet-name>  
+    <url-pattern>/controller.do</url-pattern>  
+</servlet-mapping> 
+</web-app>
