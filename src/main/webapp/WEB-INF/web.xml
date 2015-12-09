@@ -1,13 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app>
-<servlet>  
-    <description></description>  
-    <display-name>UsuarioController</display-name>  
-    <servlet-name>UsuarioController</servlet-name>  
-    <servlet-class>br.com.adminclass.controller.UsuarioController</servlet-class>  
-</servlet>  
-<servlet-mapping>  
-    <servlet-name>UsuarioController</servlet-name>  
-    <url-pattern>/controller.do</url-pattern>  
-</servlet-mapping> 
+		<display-name>AdClass</display-name>
+	<welcome-file-list>
+		<welcome-file>login.html</welcome-file>
+	</welcome-file-list>
+	<servlet>
+		<description></description>
+		<display-name>UsuarioController</display-name>
+		<servlet-name>UsuarioController</servlet-name>
+		<servlet-class>br.com.adminclass.controller.UsuarioController
+		</servlet-class>
+	</servlet>
+	<servlet>
+		<display-name>AutenticadorController</display-name>
+		<servlet-name>AutenticadorController</servlet-name>
+		<servlet-class>br.com.adminclass.controller.AutenticadorController
+		</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>UsuarioController</servlet-name>
+		<url-pattern>/controller.do</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>AutenticadorController</servlet-name>
+		<url-pattern>/autenticador.do</url-pattern>
+	</servlet-mapping>
 </web-app>
