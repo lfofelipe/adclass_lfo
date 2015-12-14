@@ -7,6 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-teste
+<%@include file="menu.jsp" %>
 </body>
 </html>

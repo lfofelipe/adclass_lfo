@@ -14,6 +14,16 @@ import br.com.admclass.persistencia.jdbc.UsuarioDAO;
 
 public class AutenticadorController extends HttpServlet {
 	@Override
+	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		HttpSession sessao = req.getSession(false);
+		if (sessao!=null){
+			sessao.invalidate();
+		}
+		
+		resp.sendRedirect("login.html");
+	}
+	
+	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		String login = req.getParameter("login");
 		String senha = req.getParameter("senha");
@@ -31,7 +41,7 @@ public class AutenticadorController extends HttpServlet {
 			
 			req.getRequestDispatcher("WEB-INF/index.jsp").forward(req, resp);
 		}else {
-			resp.getWriter().println("<script>window.alert('não encontrado!'); location.href='login.html';</script>");
+			resp.getWriter().println("<script>window.alert('Usuario ou senha incorreta!'); location.href='login.html';</script>");
 		}
 			
 	}

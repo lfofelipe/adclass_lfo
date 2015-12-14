@@ -9,13 +9,14 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>painel do usuario</title>
 <script type="text/javascript">
-function confirmaExclusao (id){
-	if(window.confirm('tem certeza que deseja realizar a Exclusão?'))
-		location.href="controller.do?id="+id+"&acao=excluir";
-}
+	function confirmaExclusao(id) {
+		if (window.confirm('tem certeza que deseja realizar a Exclusão?'))
+			location.href = "controller.do?id=" + id + "&acao=excluir";
+	}
 </script>
 </head>
 <body>
+	<%@include file="menu.jsp"%>
 	<%
 		List<Usuario> lista = (List<Usuario>) request.getAttribute("lista");
 	%>
@@ -33,12 +34,13 @@ function confirmaExclusao (id){
 			<td><%=u.getId()%></td>
 			<td><%=u.getNome()%></td>
 			<td><%=u.getLogin()%></td>
-			
-			<td><a href="javascript:confirmaExclusao(<%=u.getId()%>)"> Excluir </a> |  <a href="controller.do?acao=alterar&id=<%=u.getId()%>">Alterar</a></td>
+
+			<td><a href="javascript:confirmaExclusao(<%=u.getId()%>)">
+					Excluir </a> | <a href="controller.do?acao=alterar&id=<%=u.getId()%>">Alterar</a></td>
 		</tr>
-			<%
-				}
-			%>
+		<%
+			}
+		%>
 	</table>
 </body>
 </html>

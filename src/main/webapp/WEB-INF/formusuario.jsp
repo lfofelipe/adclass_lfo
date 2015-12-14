@@ -6,7 +6,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-
+<%@include file="menu.jsp" %>
 	<%
 		Usuario u = (Usuario)request.getAttribute("usuario");
 	%>
